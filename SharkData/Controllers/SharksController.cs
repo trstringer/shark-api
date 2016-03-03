@@ -9,13 +9,19 @@ namespace SharkData.Controllers
         // GET api/sharks
         public IEnumerable<Shark> Get()
         {
-            return Shark.GetShark();
+            return SharkEntity.GetShark();
         }
 
         // GET api/sharks/5
         public Shark Get(int id)
         {
-            return Shark.GetShark(id);
+            return SharkEntity.GetShark(id);
+        }
+
+        // PUT api/sharks/5
+        public Shark Put(int id, [FromBody]Shark newShark)
+        {
+            return SharkEntity.ModifyShark(id, newShark);
         }
     }
 }
